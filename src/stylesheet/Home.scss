@@ -1,0 +1,28 @@
+.cp-home{
+  height: 100%;
+}
+.lecture-item{
+  position: relative;
+  height: 100%;width: 100%;overflow: auto;
+  background-repeat: no-repeat;background-size: cover;background-position: center;color: #fff;
+  &::before{
+    content: "";display: block;position: absolute;z-index: 2;
+    height: 100%;width: 100%;background: -webkit-gradient(linear, 0 40%, left bottom, from(rgba(0,0,0,0)), to(rgba(0, 0, 0, 0.85)));
+  }
+  .item-intro{
+    position: absolute;bottom: 0;z-index: 5;
+    padding: 0 1.4rem 3rem 1.4rem;
+  }
+  .item-title{
+    font-weight: 600;font-size: 2rem;
+  }
+  .item-desc{
+    margin-top: 2rem;
+    font-weight: 100;font-size: 1.4rem;
+  }
+  .item-content{
+    position: relative;top: 100%;padding: 1.4rem;
+    font-size: 1.4rem;font-weight: 300;line-height: 2rem;letter-spacing: .12rem;
+    background-color: #222;
+  }
+}
