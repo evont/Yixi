@@ -34,7 +34,7 @@ export default class HomePage extends Component {
       })
       return <Swiper {...params}>{AlbumList}</Swiper>
     } else{
-      return <Loading className='state-loading' type={'cubes'} color={'#cc3434'} height='50' width='50' />
+      return <Loading className='state-loading' type={'cubes'} color={'#cc3434'} height='5rem' width='5rem' />
     }
   }
 }

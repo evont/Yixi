@@ -9,7 +9,26 @@ a{
   height: 100%;overflow-y: auto;overflow-x: hidden;
 }
 .page-wrapper{
-  height: 100%;overflow-y: auto;overflow-x: hidden;
+  position: relative;
+  height: 100%;overflow-y: auto;overflow-x: hidden;z-index: 20;
+  -webkit-transform: translateZ(0);
+-moz-transform: translateZ(0);
+-ms-transform: translateZ(0);
+-o-transform: translateZ(0);
+transform: translateZ(0);
+box-shadow: -6px 0 30px #aaa;
+}
+.page-locations{
+  height: 100%;position: relative;
+}
+.burger-button{
+  z-index: 15; position: fixed; width: 3.6rem; height: 3.6rem; left: 1.4rem; top: 2.4rem;
+}
+.burger-button img{
+  width: 100%;height: 100%;
+}
+.burger-button button{
+    position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; margin: 0px; padding: 0px; border: none; opacity: 0; font-size: 8px;
 }
 .menu-item{
   position: relative;
