@@ -1,0 +1,68 @@
+.lecture-container{
+  position: relative;height: 100%;background-color: #f8f8f8;
+  .lecture-types-container{
+     height: 3.6rem;padding: 2.4rem 1.4rem;
+     background-color: #fff;
+     .lecture-type{
+       display: inline-block;float: right;margin-right: 1rem;cursor: pointer;
+       width: 4rem;height: 2.4rem;line-height: 2.4rem;border-radius: 2px;
+       text-align: center;background-color: #eee;color: #999;font-size: 1.2rem;
+       &[data-state="1"]{
+         background-color: #cc3434;color: #fff;
+       }
+     }
+  }
+  .lecture-list-container{
+    min-height: 80%;
+    .lecture-list-item{
+        display: table;table-layout: fixed;
+        width: 100%;padding: .8rem;
+        &:not(:last-child){
+          border-bottom: 1px solid #eee;
+        }
+        .item-cover{
+          display: table-cell;
+          width: 12rem;vertical-align: middle;text-align: center;
+          img{
+              max-width: 10rem;
+          }
+        }
+        .item-detail{
+          display: table-cell;vertical-align: top;position: relative;
+          .detail-header{
+            font-size: 1.4rem;font-weight: 300;
+          }
+          .detail-author{
+             margin-top: .4rem;
+             font-size: 1.2rem;font-weight: 200;color: #999;
+             span{
+               margin-right: .6rem;
+             }
+          }
+          .detail-info{
+            display: flex;position: absolute;bottom: 0;
+            width: 100%;
+            .item-ico{
+              display: block;position: relative;flex:1;
+              padding-left: 1.4rem;
+              color: #999;font-weight: 200;
+              &::before{
+                content: "";display: inline-block;position: absolute;left:0;
+                height: 1.2rem;width: 1.2rem;
+                background-size: contain;background-position: center;background-repeat: no-repeat;
+              }
+              &[data-type="viewnum"]::before{
+                background-image: url(/img/ico-play.svg);
+              }
+              &[data-type="likenum"]::before{
+                background-image: url(/img/ico-like.svg);
+              }
+              &[data-type="cmtnum"]::before{
+                background-image: url(/img/ico-comment.svg);
+              }
+            }
+          }
+        }
+    }
+  }
+}

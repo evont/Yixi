@@ -265,7 +265,8 @@ function runDevServer(host, port, protocol) {
       "/api" : {
         target: "http://api.yixi.tv/",
         secure: false,
-        changeOrigin : true
+        changeOrigin : true,
+        headers: {"User-Agent": "YIXIProject/1.2 ( picsize=iphone6+ ; android 5.0.1; Scale/2.75)"},
       }
     }
   });

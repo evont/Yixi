@@ -15,7 +15,9 @@
     "react-swipe": "^5.0.8",
     "react-swipe-views": "0.0.12",
     "react-swipeable-views": "^0.12.1",
+    "react-swiper": "^0.1.5",
     "react-swipes": "^1.0.6",
+    "react-tabs": "^1.0.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.2",
     "swipe-js-iso": "^2.0.3"
