@@ -4,4 +4,4 @@
 
 ## Dependencies
 
-  [react-burger-menu]("https://github.com/negomi/react-burger-menu")
+  ![react-burger-menu]("https://github.com/negomi/react-burger-menu")
