@@ -4,4 +4,6 @@
 
 ## Dependencies
 
-  ![react-burger-menu]("https://github.com/negomi/react-burger-menu")
+ 1. [react-burger-menu](https://github.com/negomi/react-burger-menu)
+ 2. [react-id-swiper](https://github.com/kidjp85/react-id-swiper)
+ 3. [react-router-component](https://github.com/strml/react-router-component)
