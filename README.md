@@ -7,3 +7,8 @@
  1. [react-burger-menu](https://github.com/negomi/react-burger-menu)
  2. [react-id-swiper](https://github.com/kidjp85/react-id-swiper)
  3. [react-router-component](https://github.com/strml/react-router-component)
+
+## Capture
+
+  ![首页](Captures/DC0B66C8-2700-4900-A426-E831F86296BF.png)
+  ![演讲界面](Captures/533D825C-0105-4F9B-A6A6-75ABFA1472A8.png)
