@@ -2,6 +2,10 @@
 a{
   text-decoration: none;color: #333;
 }
+select{
+  -webkit-appearance:none;border-radius: 2px;border: 1px solid #ddd;
+  background-color: #fff;text-align: center;
+}
 
 .App {
   text-align: center;
