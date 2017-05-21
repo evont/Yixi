@@ -7,10 +7,13 @@ export default class HomePage extends Component {
   constructor(props){
     super(props);
     this.state = {
-        albumList : {}
+        albumList : {},
+        reactId : 9
     }
     this.setState = this.setState.bind(this);
+    this.renderList = this.renderList.bind(this);
     this.fetchHome = this.fetchHome.bind(this);
+    this.onReachEnd = this.onReachEnd.bind(this);
   }
   fetchHome(){
     const api_url = "/api/v1/album";
@@ -20,22 +23,33 @@ export default class HomePage extends Component {
       })
     );
   }
-  componentWillMount(){
-    this.fetchHome();
+  onReachEnd(swiper){
+    this.setState({
+      reactId: this.state.reactId + 9
+    });
+    swiper.update(true);
   }
-  render(){
-    //let albumList = this.renderList();
+  renderList(){
     const params = {
       direction: "horizontal"
     }
     if(this.state.albumList.data){
-      var AlbumList = Array.prototype.map.call(this.state.albumList.data, function(item, k){
-        return <AlbumItem album={item} key={item.id} />
+      var AlbumList = Array.prototype.filter.call(this.state.albumList.data, (item, k) =>
+          k < this.state.reactId
+      ).map(function(item){
+        return <AlbumItem album={item} key={item.id} />;
       })
-      return <Swiper {...params}>{AlbumList}</Swiper>
+      return <Swiper {...params} onReachEnd={this.onReachEnd}>{AlbumList}</Swiper>
     } else{
       return <Loading className='state-loading' type={'cubes'} color={'#cc3434'} height='5rem' width='5rem' />
     }
+  }
+  componentWillMount(){
+    this.fetchHome();
+  }
+  render(){
+    let albumList = this.renderList();
+    return albumList
   }
 }
 class AlbumItem extends Component {

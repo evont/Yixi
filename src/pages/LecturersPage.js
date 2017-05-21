@@ -19,7 +19,7 @@ export default class LecturersPage extends Component {
   fetchTabLists(){
     let api_url =  'api/v1/category/list';
     fetch(api_url).then((res) => res.json()).then((data) => this.setState({
-      tabList: data.data,
+      tabList: data,
       tagId: data.data[0].id
     }))
   }
@@ -33,18 +33,30 @@ export default class LecturersPage extends Component {
     );
   }
   renderList(data){
+    if(this.state.lecureList.data){
+        return Array.from(this.state.lecureList.data, item =>
+            <div className="lecurer-item" key={item.id}>
+                <div className="item-avatar" style={{backgroundImage: `url('${item.pic}')`}}></div>
+                <p className="item-nickname">{item.nickname}</p>
+            </div>
+        )
+    }
     return <Loading className='state-loading' type={'cubes'} color={'#cc3434'} height='5rem' width='5rem' />
   }
   renderTabList(data){
-    return Array.prototype.map.call(this.state.tabList, function(ele, ind){
-       return <option key={ele.id} value={ele.id}>{ele.name}</option>
-    })
+    if(this.state.tabList.data){
+      return Array.from(this.state.tabList.data, ele =>
+        <option key={ele.id} value={ele.id}>{ele.name}</option>
+      )
+    }
+    return <option key="48" value="48">态度</option>
   }
   tabChange(event){
     this.fetchLecturers(event.target.value);
   }
   componentWillMount(){
     this.fetchTabLists();
+    this.fetchLecturers();
   }
   render(){
     var Lectures = this.renderList(this.state.lecureList);
@@ -54,7 +66,7 @@ export default class LecturersPage extends Component {
           <div className="lecture-types-container">
               <select onChange={this.tabChange}>{TabSelectList}</select>
           </div>
-          <div className="lecture-list-container">
+          <div className="lecturers-list-container">
               {Lectures}
           </div>
       </div>
