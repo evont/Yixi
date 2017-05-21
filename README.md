@@ -9,7 +9,7 @@
  3. [react-router-component](https://github.com/strml/react-router-component) 作为全局路由
  4. [react-loading](https://github.com/fakiolinho/react-loading) 用于加载动画（可选颜色）
 
-## Capture
+## Captures
 
   ![首页](Captures/DC0B66C8-2700-4900-A426-E831F86296BF.png)
   ![演讲界面](Captures/533D825C-0105-4F9B-A6A6-75ABFA1472A8.png)
