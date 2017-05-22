@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loading from 'react-loading';
+var Link = require('react-router-component').Link;
 require('../stylesheet/Lecture.scss');
 export default class LecturersPage extends Component {
   constructor(props){
@@ -35,10 +36,12 @@ export default class LecturersPage extends Component {
   renderList(data){
     if(this.state.lecureList.data){
         return Array.from(this.state.lecureList.data, item =>
-            <div className="lecurer-item" key={item.id}>
+            <Link href={`/lecture/${item.lectures_with_cover[0] ? item.lectures_with_cover[0].id : 420}`} className="lecurer-item" key={item.id}>
+            <div>
                 <div className="item-avatar" style={{backgroundImage: `url('${item.pic}')`}}></div>
                 <p className="item-nickname">{item.nickname}</p>
             </div>
+          </Link>
         )
     }
     return <Loading className='state-loading' type={'cubes'} color={'#cc3434'} height='5rem' width='5rem' />

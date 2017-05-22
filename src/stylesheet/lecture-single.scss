@@ -1,0 +1,51 @@
+.lecturePage{
+  height: 100%;width: 100%;
+  .pageBg{
+    height: 14rem;width: 100%;
+    background-size: cover;background-repeat: no-repeat;background-position: center;
+  }
+  .pageContent{
+    padding: 0 1.4rem;
+  }
+  .content-lecturer{
+    position: relative;padding: 4rem 0 3rem 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    .lecturer-avatar{
+      position: absolute;top: -3.5rem;left:0;right: 0;
+      height: 7rem;width: 7rem;margin: auto;
+      border: 2px solid #fff;border-radius: 100%;
+      background-size: cover;background-repeat: no-repeat;background-position: center;
+    }
+    h4{
+      margin: .8rem 0;
+      font-size: 1.6rem;font-weight: 400;
+    }
+    p{
+      font-size: 1.2rem;color: #999;font-weight: 300;
+    }
+  }
+  .content-video{
+    position: relative;padding: 2rem 0;text-align: center;
+    .video-title{
+       font-weight: 300;color: #cc3434;font-size: 1.6rem;
+       .time{
+         font-size: 1.2rem;color: #999;margin: .8rem 0;
+       }
+    }
+    .video-desc{
+      margin-top: 1rem;padding-left: 1.2rem;border-left: 4px solid #cc3434;
+      text-align: left;font-size: 1.4rem;font-weight: 300;color: #999;
+    }
+    .fake-video{
+      position: relative;
+      width: 100%;height: 16rem;margin: 2rem 0;
+      background-size: cover;background-repeat: no-repeat;background-position: center;
+      &::before{
+        content: "";display: block;position: absolute;left: 0;top: 0;bottom: 0;right: 0;margin: auto;
+        height: 4rem;width: 4rem;border-radius: 100%;
+        background-image: url('/img/ico-play-red.svg');background-size: 130%;background-position: center;background-color: #fff;
+      }
+    }
+  }
+}

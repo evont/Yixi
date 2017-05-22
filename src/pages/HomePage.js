@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import Loading from 'react-loading';
+var Link = require('react-router-component').Link;
 require('../stylesheet/Home.scss');
 require('../stylesheet/swiper.scss');
 export default class HomePage extends Component {
@@ -66,6 +67,7 @@ class AlbumItem extends Component {
   renderList(){
     //console.log(this.props.album.lectures[0]);
     let bg = this.props.album ? this.props.album.background.replace(".1536x1000","") : "";
+    let linkBg = this.props.album ? this.props.album.lectures[0].lecturer.background.replace(".1242x505","") : "";
     return (<div className="lecture-item" style={{backgroundImage: `url('${bg}')`}}>
       <div className="item-intro">
         <h2 className="item-title">{this.props.album ? this.props.album.title : ""}</h2>
@@ -73,6 +75,7 @@ class AlbumItem extends Component {
       </div>
       <div className="item-content">
           <div className="item-pure" dangerouslySetInnerHTML={{__html: this.props.album ? this.props.album.webcontent : ""}}></div>
+          <Link href={`/lecture/${this.props.album.lectures[0].id}`} className="item-link" style={{backgroundImage: `url('${linkBg}')`}}></Link>
       </div>
     </div>);
   }

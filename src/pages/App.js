@@ -51,8 +51,7 @@ class App extends Component {
     this.setState = this.setState.bind(this);
     this.toggleSideBar = this.toggleSideBar.bind(this)
   }
-  toggleSideBar(){
-    let isOpen = !this.state.slideState;
+  toggleSideBar(isOpen = !this.state.slideState){
     this.setState({ slideState: isOpen })
   }
   render () {
@@ -64,7 +63,7 @@ class App extends Component {
           <Link id="lecturers" className="menu-item" data-navtype="lecturers" href="/lecturers">讲者</Link>
           <Link id="record" className="menu-item" data-navtype="record" href="/record">记录</Link>
         </Menu>
-        <Routers routerId="page-wrap" routerClass="page-wrapper" routerOnNavigation={this.toggleSideBar} routerOnMenuClick={this.toggleSideBar}/>
+        <Routers routerId="page-wrap" routerClass="page-wrapper" routerOnNavigation={() => this.toggleSideBar(false)} routerOnMenuClick={this.toggleSideBar}/>
       </div>
     );
   }

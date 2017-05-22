@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loading from 'react-loading';
+var Link = require('react-router-component').Link;
 require('../stylesheet/Lecture.scss');
 export default class LeturePage extends Component {
   constructor(props){
@@ -76,18 +77,21 @@ class ListItem extends Component {
   }
   renderList(renderType){
     //console.log(this.props.album.lectures[0]);
-    return (<div className="lecture-list-item">
-        <div className="item-cover"><img src={this.props.album.cover } alt={this.props.album.title} /></div>
-        <div className="item-detail">
-            <h4 className="detail-header">{this.props.album.title}</h4>
-            <p className="detail-author"><span>{this.props.album.lecturer.nickname}</span><span className="">{this.props.album.time}</span></p>
-            <div className="detail-info">
-                <span className="item-ico" data-type="viewnum">{this.props.album.viewnum}</span>
-                <span className="item-ico" data-type="likenum">{this.props.album.likenum}</span>
-                <span className="item-ico" data-type="cmtnum">{this.props.album.cmtnum}</span>
+    return (
+      <Link href={`/lecture/${this.props.album.id}`}>
+        <div className="lecture-list-item">
+          <div className="item-cover"><img src={this.props.album.cover } alt={this.props.album.title} /></div>
+          <div className="item-detail">
+                <h4 className="detail-header">{this.props.album.title}</h4>
+                <p className="detail-author"><span>{this.props.album.lecturer.nickname}</span><span className="">{this.props.album.time}</span></p>
+                <div className="detail-info">
+                    <span className="item-ico" data-type="viewnum">{this.props.album.viewnum}</span>
+                    <span className="item-ico" data-type="likenum">{this.props.album.likenum}</span>
+                    <span className="item-ico" data-type="cmtnum">{this.props.album.cmtnum}</span>
+                </div>
             </div>
         </div>
-    </div>);
+      </Link>);
   }
   render() {
     return this.renderList(this.props.renderType);
